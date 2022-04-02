@@ -32,3 +32,15 @@ Creating a multiple linear regression from the variables in the MechaCar_mpg.csv
 From the summary we can see that the vehicle length and ground clearance provided a non-random amount of variance to the MPG values. The slope of the regression is not zero because the p-value of 5.35e-11 is smaller than the normal significance level of 0.05 and therefore we can reject the null hypothesis.
 
 Furthermore, the multiple R-squared value of 0.71 is above the "strong" threshold of 0.7, suggesting that the model has strong predictive power for the vehicle's MPG rating.
+
+## Summary Statistics on Suspension Coils
+
+By summarizing the suspension coil PSI data we can see that the data appears normally distributed (mean and median are very similar).
+
+![Total Summary](<./total_summary.png>)
+
+Looking at the data by manufacturing lot, however, it appears the output from lot 1 is very consistent and the output from lot 3 is highly variable in comparison.
+
+![Lot Summary](<./lot_summary.png>)
+
+Since the design specifications require that the variance of suspension coils not exceed 100 PSI, manufacturing data meets this standard overall but not when examining output by manufacturing lot. Lots 1 and 2 achieve this standard, but Lot 3 shows a variance of 170.2 which is beyond the specified tolerance.

@@ -1,4 +1,11 @@
 library(dplyr)
+
+# deliverable 1
 mechacar <- read.csv("MechaCar_mpg.csv")
 model <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, mechacar)
 summary(model)
+
+# deliverable 2
+sc <- read.csv("Suspension_Coil.csv")
+total_summary <- summarize(sc, Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+lot_summary <- sc %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
