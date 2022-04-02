@@ -44,3 +44,60 @@ Looking at the data by manufacturing lot, however, it appears the output from lo
 ![Lot Summary](<./lot_summary.png>)
 
 Since the design specifications require that the variance of suspension coils not exceed 100 PSI, manufacturing data meets this standard overall but not when examining output by manufacturing lot. Lots 1 and 2 achieve this standard, but Lot 3 shows a variance of 170.2 which is beyond the specified tolerance.
+
+## T-Tests on Suspension Coils
+
+Performing a T-test on the entire population, we cannot determine whether the PSI across all lots is statistically different from the population mean of 1500 as it falls within the 95 percent confidence interval and the p-value of 0.06 is higher than the normal threshold of 0.05.
+
+    	One Sample t-test
+    
+    data:  sc$PSI
+    t = -1.8931, df = 149, p-value = 0.06028
+    alternative hypothesis: true mean is not equal to 1500
+    95 percent confidence interval:
+     1497.507 1500.053
+    sample estimates:
+    mean of x 
+      1498.78 
+
+Breaking down the data by lots, we can see that the mean for Lot 1 is exactly the population mean of 1500:
+
+    	One Sample t-test
+    
+    data:  lot1$PSI
+    t = 0, df = 49, p-value = 1
+    alternative hypothesis: true mean is not equal to 1500
+    95 percent confidence interval:
+     1499.719 1500.281
+    sample estimates:
+    mean of x 
+         1500 
+
+For Lot 2 the sample mean is higher than the population mean but not significantly so, with its p-value of 0.6 much higher than the 0.05 significance level:
+
+    	One Sample t-test
+    
+    data:  lot2$PSI
+    t = 0.51745, df = 49, p-value = 0.6072
+    alternative hypothesis: true mean is not equal to 1500
+    95 percent confidence interval:
+     1499.423 1500.977
+    sample estimates:
+    mean of x 
+       1500.2 
+  
+However, Lot 3 does appear to have a different mean PSI, with its p-value of 0.04 being lower than the 0.05 significance level:
+
+    	One Sample t-test
+    
+    data:  lot3$PSI
+    t = -2.0916, df = 49, p-value = 0.04168
+    alternative hypothesis: true mean is not equal to 1500
+    95 percent confidence interval:
+     1492.431 1499.849
+    sample estimates:
+    mean of x 
+      1496.14 
+
+Therefore we cannot conclude that lots 1 and 2 have a different mean PSI than the population, but lot 3 does.
+
