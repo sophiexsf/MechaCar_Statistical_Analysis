@@ -101,3 +101,8 @@ However, Lot 3 does appear to have a different mean PSI, with its p-value of 0.0
 
 Therefore we cannot conclude that lots 1 and 2 have a different mean PSI than the population, but lot 3 does.
 
+## Study Design: MechaCar vs Competition
+
+To compare the MechaCar against the competition, I believe consumers would be most interested in the cost (including maintenance), city fuel efficiency, passenger or luggage capacity, and safety. We want to understand if the MechaCar will be considered too costly or inefficient (or too cheap or efficient) compared to other, similar cars. The null hypothesis would be that there is no difference between the MechaCar and its competitors. Therefore one possibility would be comparing the MechaCar against other cars of a similar class using an ANOVA test, with the city MPG rating as our dependent variable and capacity and safety measures as the categorical independent variables.
+
+To run such tests we would need to gather consistent data about the characteristics and performance of the MechaCar and its competition. For the ANOVA test proposed, we would need city MPG measurements, seating capacity, and safety ratings.
